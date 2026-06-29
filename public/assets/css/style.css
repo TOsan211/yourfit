@@ -1,0 +1,732 @@
+@charset "UTF-8";
+
+/* ==========================================
+  Reset & Base Styles
+=========================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    line-height: 1.7;
+    color: #333333;
+    background-color: #fcf9f9; /* 全体的に温かみのある薄い背景 */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+a {
+    color: #e05a47;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+/* 共通ボタンリンク（詳細はこちら等） */
+.button-link {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.button-link a {
+    display: inline-block;
+    background-color: #e05a47; /* ロゴに合わせたピンク・レッド系 */
+    color: #ffffff;
+    padding: 0.8rem 2.5rem;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(224, 90, 71, 0.2);
+}
+
+/* ==========================================
+  HEADER
+=========================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 img {
+    height: 50px; /* ロゴのサイズ調整 */
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+header nav ul a {
+    color: #4a4a4a;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+header nav ul a:hover {
+    color: #e05a47;
+}
+
+/* ==========================================
+  1. HERO SECTION
+=========================================== */
+.hero-section {
+    position: relative;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.hero-visual {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+}
+
+.hero-visual img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    filter: brightness(0.85); /* 文字を見やすくするため画像を少し暗く */
+}
+
+.hero-catch {
+    position: absolute;
+    top: 35%;
+    left: 8%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    max-width: 650px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-catch h2 {
+    font-size: 2.2rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+.hero-catch p {
+    font-size: 1.1rem;
+}
+
+/* ファーストビューCTAボタン */
+.hero-cta {
+    position: absolute;
+    bottom: 10%;
+    left: 8%;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.hero-cta a {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-tel {
+    background-color: #e05a47;
+    color: #ffffff !important;
+}
+
+.btn-line {
+    background-color: #f39800; /* 親しみやすいオレンジ */
+    color: #ffffff !important;
+}
+
+/* ==========================================
+  2. FEATURE (選ばれる理由)
+=========================================== */
+section {
+    padding: 5rem 8%;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #2c2c2c;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+/* タイトルの下の装飾線 */
+section h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #e05a47;
+    margin: 1rem auto 0;
+}
+
+.top-feature {
+    background-color: #fdfaf7;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 2.5rem;
+}
+
+.feature-card {
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    border-top: 4px solid #e05a47;
+}
+
+.feature-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    color: #e05a47;
+    margin-bottom: 1rem;
+}
+
+/* ==========================================
+  3. SERVICE (サービスメニュー)
+=========================================== */
+.top-services {
+    background-color: #ffffff;
+}
+
+.service-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background-color: #fcf9f9;
+    padding: 2rem;
+    border-radius: 10px;
+    position: relative;
+    border: 1px solid #ebdcdc;
+}
+
+.service-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    color: #2c2c2c;
+}
+
+.service-number {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    background-color: #e05a47;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+/* プラン例（枠内装飾） */
+.plan-example {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-left: 3px solid #f39800;
+    border-radius: 4px;
+}
+
+.plan-example h4 {
+    color: #f39800;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+}
+
+.plan-example p {
+    font-size: 0.85rem;
+    color: #666666;
+}
+
+/* ==========================================
+  4. TESTIMONIAL (利用者の声)
+=========================================== */
+.top-testimonial {
+    background-color: #f5ecec; /* 優しいペールピンクの背景 */
+}
+
+.testimonial-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testimonial-item {
+    background-color: #ffffff;
+    padding: 3rem;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+/* クォーテーションマークの装飾 */
+.testimonial-item::before {
+    content: "“";
+    font-size: 5rem;
+    color: #ebdcdc;
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-family: serif;
+    line-height: 1;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-author {
+    display: block;
+    text-align: right;
+    font-style: normal;
+    color: #666666;
+    font-weight: bold;
+}
+
+/* ==========================================
+  5. PRICE & AREA (料金・エリア)
+=========================================== */
+.top-price-area {
+    background-color: #ffffff;
+}
+
+.price-intro {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.price-intro h3 {
+    font-size: 1.4rem;
+    color: #e05a47;
+}
+
+/* テーブルスタイリング */
+.table-wrap {
+    overflow-x: auto;
+    margin-bottom: 2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    min-width: 600px;
+}
+
+th, td {
+    padding: 1.2rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ebdcdc;
+}
+
+th {
+    background-color: #fcf9f9;
+    color: #4a4a4a;
+    font-weight: bold;
+}
+
+/* 料金具体例ボックス */
+.price-example-box {
+    background-color: #fdfaf7;
+    border: 1px dashed #f39800;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+}
+
+.price-example-box h4 {
+    color: #f39800;
+    margin-bottom: 0.5rem;
+}
+
+.price-example-box ul {
+    list-style-type: none;
+}
+
+.price-example-box li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.price-example-box li::before {
+    content: "・";
+    position: absolute;
+    left: 0;
+    color: #f39800;
+    font-weight: bold;
+}
+
+/* エリア・マップ */
+.area-box {
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid #ebdcdc;
+}
+
+.area-box h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.area-note {
+    font-size: 0.9rem;
+    color: #666666;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.map-container {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* ==========================================
+  6. GUIDE (ご利用ガイド)
+=========================================== */
+.top-guide {
+    background-color: #fdfaf7;
+}
+
+.guide-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.step-card {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.step-num {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #f39800;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+}
+
+.step-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+    color: #2c2c2c;
+}
+
+/* ==========================================
+  7. PROFILE (代表プロフィール)
+=========================================== */
+.top-profile {
+    background-color: #ffffff;
+}
+
+.profile-container {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.profile-container img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%; /* 丸型アイコン */
+    border: 5px solid #fcf9f9;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+}
+
+.profile-text h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #2c2c2c;
+}
+
+.profile-text p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+  8. FAQ
+=========================================== */
+.top-faq {
+    background-color: #fdfaf7;
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.faq-item {
+    background-color: #ffffff;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.faq-item h3 {
+    font-size: 1.05rem;
+    color: #e05a47;
+    margin-bottom: 0.5rem;
+}
+
+.faq-item p {
+    font-size: 0.95rem;
+    color: #4a4a4a;
+}
+
+/* ==========================================
+  9. MAIN CTA (お問い合わせセクション)
+=========================================== */
+.main-cta {
+    background: linear-gradient(135deg, #e05a47 0%, #f39800 100%);
+    color: #ffffff;
+    text-align: center;
+    padding: 5rem 5%;
+}
+
+.main-cta h2 {
+    color: #ffffff;
+    font-size: 2rem;
+}
+
+.main-cta h2::after {
+    background-color: #ffffff;
+}
+
+.main-cta > p {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.tel-block, .line-block {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 2rem;
+    border-radius: 12px;
+    flex: 1;
+    min-width: 300px;
+    backdrop-filter: blur(5px);
+}
+
+.tel-block p, .line-block p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* CTAエリア内のでかいボタン */
+.btn-primary-tel, .btn-secondary-tel, .btn-primary-line {
+    display: block;
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+}
+
+.btn-primary-tel { color: #e05a47; }
+.btn-secondary-tel { color: #4a4a4a; font-size: 1rem; margin-bottom: 0; }
+.btn-primary-line { color: #2cb430; font-size: 1.1rem; margin-bottom: 0; } /* LINEカラー */
+
+.btn-sub {
+    font-size: 0.8rem;
+    font-weight: normal;
+    display: block;
+}
+
+/* ==========================================
+  FOOTER
+=========================================== */
+.site-footer {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    padding: 4rem 5% 2rem;
+    font-size: 0.9rem;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-col h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    border-left: 3px solid #e05a47;
+    padding-left: 0.5rem;
+}
+
+.footer-info .address {
+    margin-bottom: 1rem;
+}
+
+.footer-info .license {
+    font-size: 0.8rem;
+    color: #aaaaaa;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: #cccccc;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444444;
+    padding-top: 1.5rem;
+    color: #888888;
+    font-size: 0.8rem;
+}
+
+/* ==========================================
+  RESPONSIVE (スマートフォン最適化)
+=========================================== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    header nav ul {
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    header nav ul a {
+        font-size: 0.85rem;
+    }
+
+    section {
+        padding: 3.5rem 5%;
+    }
+
+    .hero-visual {
+        min-height: auto;
+    }
+
+    .hero-visual img {
+        height: 400px;
+    }
+
+    .hero-catch {
+        top: 40%;
+        left: 5%;
+        right: 5%;
+    }
+
+    .hero-catch h2 {
+        font-size: 1.4rem;
+    }
+
+    .hero-catch p {
+        font-size: 0.9rem;
+    }
+
+    .hero-cta {
+        bottom: 5%;
+        left: 5%;
+        right: 5%;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .hero-cta a {
+        font-size: 0.95rem;
+        padding: 0.8rem;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+}
